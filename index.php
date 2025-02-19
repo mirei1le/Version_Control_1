@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Page</title>
-    <link rel="stylesheet" href="/style.css">
-
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+    <h1>SHOPAHOLICS</h1>
+    <form action="#" method="get" class="search-bar">
+    <input type="text" name="q" placeholder="Search products, brands..." required>
+    <button type="submit">🔍</button>
+</form>
 
-    <h1>My first PHP page</h1>
+    <ul>
+        <?php
+        $menu_items = [
+            "Home" => "#home",
+            "News" => "#news",
+            "Contact" => "#contact",
+            "About" => "#about"
+        ];
+        foreach ($menu_items as $name => $link) {
+            echo "<li><a href='" . htmlspecialchars($link) . "'>" . htmlspecialchars($name) . "</a></li>";
+        }
+        ?>
+    </ul>
+
+    
 
     <?php
-    echo "Shopping is fun!";
+    echo "SHOPAHOLICS";
     ?>
 
 </body>
